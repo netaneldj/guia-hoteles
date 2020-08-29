@@ -76,9 +76,9 @@
         <div class="card card-hotel  d-flex flex-column justify-content-between mr-2">
           <div class="card-header">
             <img class="card-img-top" src="images/madrid.jpg" alt="madrid img">            
-            <h5 class="card-title">Hotel Madrid</h5>
+            <h4 class="card-title" data-toggle="tooltip" data-placement="top" title="Las primeras reservas cuentan con un city tour gratuito!">Hotel Madrid</h4>
             <h6 class="card-subtitle text-muted">España</h6>
-            <p class="card-text">Hotel ubicado en pleno centro de Madrid a pocos metros del parque del Retiro.</p>
+            <p class="card-text">Hotel ubicado en pleno centro de Madrid a pocos metros del parque del Retiro.</p>            
           </div>
           <div>
             <button class="btn btn-primary btn-reserva"><span class="oi oi-plus"></span> Reservar</button>
@@ -87,9 +87,9 @@
         <div class="card card-hotel  d-flex flex-column justify-content-between mr-2">
           <div class="card-header">
             <img class="card-img-top" src="images/barcelona.jpg" alt="barcelona img">            
-            <h4 class="card-title">Hotel Barcelona</h4>
+            <h4 class="card-title" data-toggle="tooltip" data-placement="top" title="Las primeras reservas cuentan con un par de entradas a la Sagrada Familia de regalo!">Hotel Barcelona</h4>
             <h6 class="card-subtitle text-muted">España</h6>
-            <p class="card-text">Hotel ubicado en pleno centro de Barcelona a pocos metros de la playa.</p>
+            <p class="card-text">Hotel ubicado en pleno centro de Barcelona a pocos metros de la playa.</p>          
           </div>
           <div>
             <button class="btn btn-primary btn-reserva"><span class="oi oi-plus"></span> Reservar</button>
@@ -98,7 +98,7 @@
         <div class="card card-hotel  d-flex flex-column justify-content-between mr-2">
           <div class="card-header">
             <img class="card-img-top" src="images/buenos-aires.jpg" alt="buenos aires img">            
-            <h4 class="card-title">Hotel Buenos Aires</h4>
+            <h4 class="card-title" data-toggle="tooltip" data-placement="top" title="Las primeras reservas cuentan con clases de tango gratis!">Hotel Buenos Aires</h4>
             <h6 class="card-subtitle text-muted">Argentina</h6>
             <p class="card-text">Hotel ubicado en pleno centro de Buenos Aires a pocos metros del obelisco porteño.</p>
           </div>
@@ -114,7 +114,7 @@
             <p class="card-text">Hotel ubicado en pleno centro de Rio de Janeiro a pocos metros de la playa.</p>
           </div>
           <div>
-            <button class="btn btn-primary btn-reserva"><span class="oi oi-plus"></span> Reservar</button>
+            <button class="btn btn-primary btn-reserva" data-toggle="popover" data-content="Consultá las promociones vigentes"><span class="oi oi-plus"></span> Reservar</button>
           </div>      
         </div>          
         <div class="card card-hotel  d-flex flex-column justify-content-between">
@@ -195,8 +195,14 @@
   </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/popper.js/dist/popper.min.js"></script>
+    <script src="node_modules/jQuery/dist/jQuery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+      $(function(){
+        $("[data-toggle='tooltip']").tooltip();
+        $("[data-toggle='popover']").popover();
+      });
+    </script>
   </body>
 </html>
