@@ -163,7 +163,7 @@
             <h4 class="card-title">Hotel New York</h4>
             <h6 class="card-subtitle text-muted">Estados Unidos</h6>
             <p class="card-text">Hotel ubicado en pleno centro de Manhattan a pocos metros del Time Square.</p>
-            <button class="btn btn-outline-success" data-toggle="modal" data-target="#contacto">Contacto</button>
+            <button class="btn btn-outline-success" data-toggle="modal" data-target="#contacto" id="contactoBtn">Contacto</button>
           </div>
           <div>
             <button class="btn btn-primary btn-reserva"><span class="oi oi-plus"></span> Reservar</button>
@@ -231,9 +231,27 @@
       $(function(){
         $("[data-toggle='tooltip']").tooltip();
         $("[data-toggle='popover']").popover();
-        $('.carousel').carousel()({
-          interval: 1000
-        });
+        $('.carousel').carousel({
+          interval: 500
+        });              
+        $('#contacto').on('show.bs.modal',function (e){
+          console.log('el modal se esta mostrando');
+          $('#contactoBtn').removeClass('btn-outline-success');
+          $('#contactoBtn').addClass('btn-primary');
+          $('#contactoBtn').prop('disabled',true);
+        });                
+        $('#contacto').on('shown.bs.modal',function (e){
+          console.log('el modal se esta mostro');
+        });                        
+        $('#contacto').on('hide.bs.modal',function (e){
+          console.log('el modal se oculta');
+        });                        
+        $('#contacto').on('hidden.bs.modal',function (e){
+          console.log('el modal se ocultó');
+          $('#contactoBtn').removeClass('btn-primary');
+          $('#contactoBtn').addClass('btn-outline-success');
+          $('#contactoBtn').prop('disabled',false);          
+        });                        
       });
     </script>
   </body>
